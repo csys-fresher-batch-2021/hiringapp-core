@@ -10,6 +10,10 @@ insert into librarytable(bookname , author , book_publication ,yearofPublication
 insert into librarytable(bookname ,author,book_publication,yearofPublication,no_of_copies)values('Client Server Computing','Lalit Kumar','Sun India Publications',2012,20);
 insert into librarytable(bookname , author , book_publication ,yearofPublication, no_of_copies)values ('Junior Level Books Introduction to Computer' , 'Amit Garg ' , 'Readers Zone ' , '2012' , '10'  );
 ```
+ Display Table 
+```
+SELECT * FROM LIBRARY TABLE 
+```
 
 # Library Table 
   | Book Name | Author | Book Publications | Year Of Publication | No Of Copies |
@@ -20,3 +24,5 @@ insert into librarytable(bookname , author , book_publication ,yearofPublication
   |Mobile Computing | Vinay Kumar | K Nath | 1987 | 20 |
   |Computer Networks| Sharad Kumar | Sun India | 2010 | 20 |
   
+  
+  # LIBRARY BOOK TABLE 

@@ -84,7 +84,7 @@ ADMIN_PASSWORD VARCHAR(200),
  # DISPLAY MEMBER TABLE 
  
   | MEMBER ID | MEMBER NAME  | MEMBER NUMBER  | MEMBER JOINING DATE  | MEMBER STATUS |
-  |:--------|:-----------|:---------------|:--------------|
+  |:--------|:-----------|:---------------|:--------------|:-------------------|
  | 2000| MAGESH  | 9876543219 | 2021-07-01| ACTIVE |
  | 20001 | RAJA  | 8876543219 | 2021-06-28 | INACTIVE |
  | 20002 | MUTHU | 7654321890 | 2021-06-25 | ACTIVE |

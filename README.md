@@ -59,15 +59,15 @@ BOOK_AVAILABLITY_STATUS VARCHAR(10)
  TYPE_OF_USER VARCHAR(30)
  );
   ```
- # DISPLAY USER TABLE 
+ # DISPLAY ADMIN TABLE 
   ``` sql
   SELECT * FROM USER_TABLE
    ```
-  # USER TABLE 
+  # ADMIN TABLE 
   | USER ID | USER NAME  | USER PASSWORD  | USER NUMBER  | TYPE OF USER |
   |:--------|:-----------|:---------------|:-------------|--------------|
  | 30001| NEVIL | Password@123 | 9876543219 | ADMIN |
  | 30002 | Krishna | Password@123 | 8876543219 | ADMIN |
- | 30003 | Lingtan | Password@123  | 7654321890 | USER |
- | 30004 | Venkat  | Password@123  | 6543217890 | USER |
+ | 30003 | Lingtan | Password@123  | 7654321890 | ADMIN |
+ | 30004 | Venkat  | Password@123  | 6543217890 | ADMIN |
  

@@ -46,12 +46,12 @@ ADMIN_PASSWORD VARCHAR(200),
   SELECT * FROM USER_TABLE
    ```
   # ADMIN TABLE 
-  | USER ID | USER NAME  | USER PASSWORD  | USER NUMBER  | TYPE OF USER |
-  |:--------|:-----------|:---------------|:-------------|--------------|
- | 30001| NEVIL | Password@123 | 9876543219 | ADMIN |
- | 30002 | Krishna | Password@123 | 8876543219 | ADMIN |
- | 30003 | Lingtan | Password@123  | 7654321890 | ADMIN |
- | 30004 | Venkat  | Password@123  | 6543217890 | ADMIN |
+  | USER ID | USER NAME  | USER PASSWORD  | USER NUMBER  | 
+  |:--------|:-----------|:---------------|:-------------|
+ | 30001| NEVIL | Password@123 | 9876543219 | 
+ | 30002 | Krishna | Password@123 | 8876543219 |
+ | 30003 | Lingtan | Password@123  | 7654321890 | 
+ | 30004 | Venkat  | Password@123  | 6543217890 |
  
  # CREATE LIBRARY MEMBER TABLE 
  ```sql

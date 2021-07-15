@@ -40,10 +40,9 @@ public class MemberImpDAO implements MemberDAO {
 
 			pst.setDate(4, Date.valueOf(memberDetails.getMemberJoiningDate()));
 			pst.setString(5, memberDetails.getStatus());
-
 			pst.executeUpdate();
 		} catch (ClassNotFoundException | SQLException e) {
-			throw new DbException("Can't insert Ordered user.");
+			throw new DbException("Can't insert user.");
 		} finally {
 			ConnectionUtil.close(pst, connection);
 		}
@@ -56,7 +55,6 @@ public class MemberImpDAO implements MemberDAO {
 		ResultSet rs = null;
 		try {
 			connection = ConnectionUtil.getConnection();
-
 			String sql = DISPLAY_ALL_MEMBER_QUERY;
 			pst = connection.prepareStatement(sql);
 			rs = pst.executeQuery();
@@ -68,6 +66,7 @@ public class MemberImpDAO implements MemberDAO {
 				String status = rs.getString("MEMBER_STATUS");
 				MemberTable memberTable = new MemberTable(memberId, memberName, mobileNumber, date, status);
 				memberList.add(memberTable);
+
 			}
 		} catch (ClassNotFoundException | SQLException e) {
 			e.getMessage();

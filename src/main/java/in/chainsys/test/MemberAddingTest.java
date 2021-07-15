@@ -1,9 +1,7 @@
 package in.chainsys.test;
 
 import java.time.LocalDate;
-import java.util.List;
 
-import in.chainsys.dao.imp.MemberImpDAO;
 import in.chainsys.model.MemberTable;
 import in.chainsys.service.MemberService;
 
@@ -21,8 +19,6 @@ public class MemberAddingTest {
 		System.out.println(memberDetails);
 		boolean isMemberAdded = MemberService.addMember(memberId, memberName, mobileNo, date, Status);
 		System.out.println(isMemberAdded);
-		List<MemberTable> obj = MemberImpDAO.getAllMembers();
-		System.out.println(obj);
 
 	}
 

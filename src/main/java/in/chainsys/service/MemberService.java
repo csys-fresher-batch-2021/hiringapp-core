@@ -43,12 +43,25 @@ public class MemberService {
 		return added;
 	}
 
+	/*
+	 * This method is used to delete member
+	 * 
+	 * @param memberId
+	 */
 	public static boolean deleteMember(int memberId) throws Exception {
 		int id = memberId;
 		MemberImpDAO.deleteMember(id);
 		return true;
 	}
 
+	/**
+	 * This method is used to update the status
+	 * 
+	 * @param memberId
+	 * @param status
+	 * @return
+	 * @throws Exception
+	 */
 	public static boolean updateMemberStatus(int memberId, String status) throws Exception {
 		int id = memberId;
 		String status1 = status;

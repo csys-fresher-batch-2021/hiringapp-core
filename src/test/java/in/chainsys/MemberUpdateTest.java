@@ -8,6 +8,9 @@ import in.chainsys.service.MemberService;
 
 public class MemberUpdateTest {
 	public static void main(String[] args) throws Exception {
+		/**
+		 * Update Active or Inactive status
+		 */
 
 		int memberId = 1002;
 		String status = "INACTIVE";

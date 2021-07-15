@@ -5,6 +5,12 @@ import java.time.LocalDate;
 import in.chainsys.service.MemberService;
 
 public class MemberAddingTest {
+	/**
+	 * Hardcode to add member
+	 * 
+	 * @param args
+	 * @throws Throwable
+	 */
 
 	public static void main(String[] args) throws Throwable {
 		LocalDate dob = LocalDate.now();

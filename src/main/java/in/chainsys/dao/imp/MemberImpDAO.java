@@ -18,6 +18,8 @@ public class MemberImpDAO implements MemberDAO {
 	private static final String DISPLAY_ALL_MEMBER_QUERY = "SELECT * FROM MEMBER_TABLE";
 	private static final String DELETE_MEMBER_QUERY = "DELETE FROM MEMBER_TABLE where MEMBER_ID = ?";
 	private static final String UPDATE_MEMBER_QUERY = "UPDATE MEMBER_TABLE set MEMBER_STATUS = (?) where MEMBER_ID= (?)";
+	private static final String DISPLAY_ACTIVE_MEMBER_QUERY = "SELECT MEMBER_ID,MEMBER_NAME,MEMBER_MOBILE_NUMBER,MEMBER_JOINING_DATE , MEMBER_STATUS FROM MEMBER_TABLE WHERE MEMBER_STATUS = 'ACTIVE'";
+	private static final String DISPLAY_INACTIVE_MEMBER_QUERY = "SELECT MEMBER_ID,MEMBER_NAME,MEMBER_MOBILE_NUMBER,MEMBER_JOINING_DATE , MEMBER_STATUS FROM MEMBER_TABLE WHERE MEMBER_STATUS = 'INACTIVE'";
 
 	/**
 	 * This Method is to Add member.
@@ -47,6 +49,62 @@ public class MemberImpDAO implements MemberDAO {
 		} finally {
 			ConnectionUtil.close(pst, connection);
 		}
+	}
+
+	public static List<MemberTable> getActiveMemers() throws Exception {
+		List<MemberTable> activeMember = new ArrayList<>();
+		Connection connection = null;
+		PreparedStatement pst = null;
+		ResultSet rs = null;
+		try {
+			connection = ConnectionUtil.getConnection();
+			String sql = DISPLAY_ACTIVE_MEMBER_QUERY;
+			pst = connection.prepareStatement(sql);
+			rs = pst.executeQuery();
+			while (rs.next()) {
+				int memberId = rs.getInt("MEMBER_ID");
+				String memberName = rs.getString("MEMBER_NAME");
+				long mobileNumber = rs.getLong("MEMBER_MOBILE_NUMBER");
+				Date date = rs.getDate("MEMBER_JOINING_DATE");
+				String status = rs.getString("MEMBER_STATUS");
+				MemberTable memberTable = new MemberTable(memberId, memberName, mobileNumber, date, status);
+				activeMember.add(memberTable);
+
+			}
+		} catch (ClassNotFoundException | SQLException e) {
+			e.getMessage();
+		} finally {
+			ConnectionUtil.close(pst, connection);
+		}
+		return activeMember;
+	}
+
+	public static List<MemberTable> getInActiveMemers() throws Exception {
+		List<MemberTable> activeMember = new ArrayList<>();
+		Connection connection = null;
+		PreparedStatement pst = null;
+		ResultSet rs = null;
+		try {
+			connection = ConnectionUtil.getConnection();
+			String sql = DISPLAY_INACTIVE_MEMBER_QUERY;
+			pst = connection.prepareStatement(sql);
+			rs = pst.executeQuery();
+			while (rs.next()) {
+				int memberId = rs.getInt("MEMBER_ID");
+				String memberName = rs.getString("MEMBER_NAME");
+				long mobileNumber = rs.getLong("MEMBER_MOBILE_NUMBER");
+				Date date = rs.getDate("MEMBER_JOINING_DATE");
+				String status = rs.getString("MEMBER_STATUS");
+				MemberTable memberTable = new MemberTable(memberId, memberName, mobileNumber, date, status);
+				activeMember.add(memberTable);
+
+			}
+		} catch (ClassNotFoundException | SQLException e) {
+			e.getMessage();
+		} finally {
+			ConnectionUtil.close(pst, connection);
+		}
+		return activeMember;
 	}
 
 	public static List<MemberTable> getAllMembers() {

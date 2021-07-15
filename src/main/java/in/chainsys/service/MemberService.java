@@ -33,10 +33,7 @@ public class MemberService {
 
 		if (MemberValidator.isValidMemberName(name, "Invalid Member") && MemberValidator.isValid(mobileno)
 				&& MemberValidator.isMemberExists(name)) {
-			System.out.println(mobileno);
 			MemberTable memberDetails = new MemberTable(id, name, mobileno, date, status1);
-			System.out.println(memberDetails);
-
 			MemberImpDAO.addMember(memberDetails);
 			added = true;
 

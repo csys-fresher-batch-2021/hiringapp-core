@@ -1,4 +1,4 @@
-package in.chainsys.excepiton;
+package in.chainsys.exception;
 
 public class InvalidCredentialsExcepions extends Exception {
 

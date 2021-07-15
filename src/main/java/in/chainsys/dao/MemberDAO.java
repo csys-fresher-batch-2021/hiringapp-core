@@ -29,4 +29,15 @@ public interface MemberDAO {
 	static void deleteMember(MemberTable memberId) throws DbException {
 	}
 
+	/**
+	 * This method update the member status .
+	 * 
+	 * @param memberIdnumber
+	 * @param status
+	 * @throws DBException
+	 */
+
+	static void updateMemberStatus(int memberId, String status) throws DbException {
+	}
+
 }

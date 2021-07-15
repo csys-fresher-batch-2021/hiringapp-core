@@ -1,4 +1,4 @@
-package in.chainsys.test;
+package in.chainsys;
 
 import java.util.List;
 

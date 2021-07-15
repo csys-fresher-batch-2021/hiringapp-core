@@ -31,7 +31,8 @@ public class MemberService {
 		LocalDate date = memberJoiningDate;
 		String status1 = status;
 
-		if (MemberValidator.isValidMemberName(name, "Invalid Member") && MemberValidator.isValid(mobileno)) {
+		if (MemberValidator.isValidMemberName(name, "Invalid Member") && MemberValidator.isValid(mobileno)
+				&& MemberValidator.isMemberExists(name)) {
 			System.out.println(mobileno);
 			MemberTable memberDetails = new MemberTable(id, name, mobileno, date, status1);
 			System.out.println(memberDetails);
@@ -47,5 +48,13 @@ public class MemberService {
 		int id = memberId;
 		MemberImpDAO.deleteMember(id);
 		return true;
+	}
+
+	public static boolean updateMemberStatus(int memberId, String status) throws Exception {
+		int id = memberId;
+		String status1 = status;
+		MemberImpDAO.updateMemberStatus(status1, id);
+		return true;
+
 	}
 }

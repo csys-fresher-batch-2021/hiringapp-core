@@ -1,4 +1,4 @@
-package in.chainsys.test;
+package in.chainsys;
 
 import java.time.LocalDate;
 
@@ -9,8 +9,8 @@ public class MemberAddingTest {
 
 	public static void main(String[] args) throws Throwable {
 		LocalDate dob = LocalDate.now();
-		int memberId = 1002;
-		String memberName = "Madhan";
+		int memberId = 1003;
+		String memberName = "Raja";
 		long mobileNo = 9090909090L;
 		LocalDate date = dob;
 		String Status = "Active";

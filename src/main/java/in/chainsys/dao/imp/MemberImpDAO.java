@@ -17,6 +17,7 @@ public class MemberImpDAO implements MemberDAO {
 	private static final String INSERT_MEMBER_QUERY = "INSERT INTO MEMBER_TABLE (MEMBER_ID,MEMBER_NAME,MEMBER_MOBILE_NUMBER,MEMBER_JOINING_DATE , MEMBER_STATUS) values(?,?,?,?,?)";
 	private static final String DISPLAY_ALL_MEMBER_QUERY = "SELECT * FROM MEMBER_TABLE";
 	private static final String DELETE_MEMBER_QUERY = "DELETE FROM MEMBER_TABLE where MEMBER_ID = ?";
+	private static final String UPDATE_MEMBER_QUERY = "UPDATE MEMBER_TABLE set MEMBER_STATUS = (?) where MEMBER_ID= (?)";
 
 	/**
 	 * This Method is to Add member.
@@ -94,4 +95,29 @@ public class MemberImpDAO implements MemberDAO {
 			ConnectionUtil.close(rs, pst, connection);
 		}
 	}
+
+	public static void updateMemberStatus(String status, int memberId) throws DbException {
+		Connection connection = null;
+		PreparedStatement pst = null;
+		ResultSet rs = null;
+		System.out.println(status);
+		String sql = UPDATE_MEMBER_QUERY;
+		try {
+			connection = ConnectionUtil.getConnection();
+			pst = connection.prepareStatement(sql);
+
+			pst.setString(1, status);
+			pst.setInt(2, memberId);
+			pst.executeUpdate();
+
+		} catch (SQLException e) {
+
+			throw new DbException("can't update the user status");
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} finally {
+			ConnectionUtil.close(rs, pst, connection);
+		}
+	}
+
 }

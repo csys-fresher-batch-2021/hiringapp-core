@@ -29,7 +29,7 @@ public class MemberValidator {
 	}
 
 	/**
-	 * This method validates the movie name avoids special characters, numbers,null
+	 * This method validates the member name avoids special characters, numbers,null
 	 * value,white space and length of the movie name must not exceed 30 characters.
 	 * 
 	 * @param memberName

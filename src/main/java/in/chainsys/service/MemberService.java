@@ -36,8 +36,10 @@ public class MemberService {
 			System.out.println(mobileno);
 			MemberTable memberDetails = new MemberTable(id, name, mobileno, date, status1);
 			System.out.println(memberDetails);
+
 			MemberImpDAO.addMember(memberDetails);
 			added = true;
+
 		} else {
 			throw new Exception(MessageConstant.INVALIDMEMBERNAME);
 		}
@@ -57,4 +59,5 @@ public class MemberService {
 		return true;
 
 	}
+
 }

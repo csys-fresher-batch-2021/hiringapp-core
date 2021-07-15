@@ -54,7 +54,8 @@ public class MemberTable {
 	@Override
 	public String toString() {
 		return "MemberTable [memberIdNumber=" + memberIdNumber + ", memberName=" + memberName + ", mobileNumber="
-				+ mobileNumber + ", memberJoiningDate=" + memberJoiningDate + ", status=" + status + "]";
+				+ mobileNumber + ", memberJoiningDate=" + memberJoiningDate + ", status=" + status + ", Date2=" + Date2
+				+ "]";
 	}
 
 	public MemberTable(int memberIdNumber, String memberName, long mobileNumber, LocalDate date, String status) {

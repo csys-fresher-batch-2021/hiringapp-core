@@ -9,42 +9,50 @@ public class MemberTable {
 	private long mobileNumber;
 	private LocalDate memberJoiningDate;
 	private String status;
-	private Date Date2;
+	private Date date;
 
 	public int getMemberIdNumber() {
 		return memberIdNumber;
-	}
-
-	public void setMemberIdNumber(int memberIdNumber) {
-		this.memberIdNumber = memberIdNumber;
 	}
 
 	public String getMemberName() {
 		return memberName;
 	}
 
-	public void setMemberName(String memberName) {
-		this.memberName = memberName;
-	}
-
 	public long getMobileNumber() {
 		return mobileNumber;
-	}
-
-	public void setMobileNumber(long mobileNumber) {
-		this.mobileNumber = mobileNumber;
 	}
 
 	public LocalDate getMemberJoiningDate() {
 		return memberJoiningDate;
 	}
 
-	public void setMemberJoiningDate(LocalDate memberJoiningDate) {
-		this.memberJoiningDate = memberJoiningDate;
-	}
-
 	public String getStatus() {
 		return status;
+	}
+
+	public Date getDate() {
+		return date;
+	}
+
+	public void setDate(Date date) {
+		this.date = date;
+	}
+
+	public void setMemberIdNumber(int memberIdNumber) {
+		this.memberIdNumber = memberIdNumber;
+	}
+
+	public void setMemberName(String memberName) {
+		this.memberName = memberName;
+	}
+
+	public void setMobileNumber(long mobileNumber) {
+		this.mobileNumber = mobileNumber;
+	}
+
+	public void setMemberJoiningDate(LocalDate memberJoiningDate) {
+		this.memberJoiningDate = memberJoiningDate;
 	}
 
 	public void setStatus(String status) {
@@ -54,7 +62,7 @@ public class MemberTable {
 	@Override
 	public String toString() {
 		return "MemberTable [memberIdNumber=" + memberIdNumber + ", memberName=" + memberName + ", mobileNumber="
-				+ mobileNumber + ", memberJoiningDate=" + memberJoiningDate + ", status=" + status + ", Date=" + Date2
+				+ mobileNumber + ", memberJoiningDate=" + memberJoiningDate + ", status=" + status + ", Date=" + date
 				+ "]";
 	}
 
@@ -71,7 +79,7 @@ public class MemberTable {
 		super();
 		this.memberName = memberName2;
 		this.mobileNumber = mobileNumber2;
-		this.Date2 = date2;
+		this.date = date2;
 		this.status = status2;
 	}
 
@@ -87,7 +95,7 @@ public class MemberTable {
 		this.memberIdNumber = memberId;
 		this.memberName = memberName2;
 		this.mobileNumber = mobileNumber2;
-		this.Date2 = date;
+		this.date = date;
 		this.status = status2;
 	}
 

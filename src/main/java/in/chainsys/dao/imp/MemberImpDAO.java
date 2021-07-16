@@ -17,7 +17,7 @@ public class MemberImpDAO implements MemberDAO {
 	private static final String INSERT_MEMBER_QUERY = "INSERT INTO MEMBER_TABLE (MEMBER_ID,MEMBER_NAME,MEMBER_MOBILE_NUMBER,MEMBER_JOINING_DATE , MEMBER_STATUS) values(?,?,?,?,?)";
 	private static final String DISPLAY_ALL_MEMBER_QUERY = "SELECT * FROM MEMBER_TABLE";
 	private static final String DELETE_MEMBER_QUERY = "DELETE FROM MEMBER_TABLE where MEMBER_ID = ?";
-	private static final String UPDATE_MEMBER_QUERY = "UPDATE MEMBER_TABLE set MEMBER_STATUS = (?) where MEMBER_ID= (?)";
+	private static final String UPDATE_MEMBER_QUERY = "UPDATE MEMBER_TABLE set MEMBER_STATUS = ? where MEMBER_ID= ?";
 	private static final String DISPLAY_ACTIVE_MEMBER_QUERY = "SELECT MEMBER_ID,MEMBER_NAME,MEMBER_MOBILE_NUMBER,MEMBER_JOINING_DATE , MEMBER_STATUS FROM MEMBER_TABLE WHERE MEMBER_STATUS = 'ACTIVE'";
 	private static final String DISPLAY_INACTIVE_MEMBER_QUERY = "SELECT MEMBER_ID,MEMBER_NAME,MEMBER_MOBILE_NUMBER,MEMBER_JOINING_DATE , MEMBER_STATUS FROM MEMBER_TABLE WHERE MEMBER_STATUS = 'INACTIVE'";
 
@@ -32,7 +32,6 @@ public class MemberImpDAO implements MemberDAO {
 		Connection connection = null;
 		PreparedStatement pst = null;
 		try {
-			System.out.println(memberDetails);
 			connection = ConnectionUtil.getConnection();
 			String sql = INSERT_MEMBER_QUERY;
 			pst = connection.prepareStatement(sql);
@@ -51,7 +50,7 @@ public class MemberImpDAO implements MemberDAO {
 		}
 	}
 
-	public static List<MemberTable> getActiveMemers() throws Exception {
+	public static List<MemberTable> getActiveMemers() throws DbException {
 		List<MemberTable> activeMember = new ArrayList<>();
 		Connection connection = null;
 		PreparedStatement pst = null;
@@ -72,14 +71,14 @@ public class MemberImpDAO implements MemberDAO {
 
 			}
 		} catch (ClassNotFoundException | SQLException e) {
-			e.getMessage();
+			throw new DbException("Can't get the active member status");
 		} finally {
 			ConnectionUtil.close(pst, connection);
 		}
 		return activeMember;
 	}
 
-	public static List<MemberTable> getInActiveMemers() throws Exception {
+	public static List<MemberTable> getInActiveMemers() throws DbException {
 		List<MemberTable> activeMember = new ArrayList<>();
 		Connection connection = null;
 		PreparedStatement pst = null;
@@ -100,7 +99,7 @@ public class MemberImpDAO implements MemberDAO {
 
 			}
 		} catch (ClassNotFoundException | SQLException e) {
-			e.getMessage();
+			throw new DbException("Can't get the inactive member status");
 		} finally {
 			ConnectionUtil.close(pst, connection);
 		}
@@ -148,7 +147,7 @@ public class MemberImpDAO implements MemberDAO {
 		}
 
 		catch (ClassNotFoundException | SQLException e) {
-			e.getMessage();
+			throw new DbException("Can't delete the user member");
 		} finally {
 			ConnectionUtil.close(rs, pst, connection);
 		}
@@ -158,7 +157,6 @@ public class MemberImpDAO implements MemberDAO {
 		Connection connection = null;
 		PreparedStatement pst = null;
 		ResultSet rs = null;
-		System.out.println(status);
 		String sql = UPDATE_MEMBER_QUERY;
 		try {
 			connection = ConnectionUtil.getConnection();

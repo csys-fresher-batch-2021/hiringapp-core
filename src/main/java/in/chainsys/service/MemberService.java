@@ -3,6 +3,9 @@ package in.chainsys.service;
 import java.time.LocalDate;
 
 import in.chainsys.dao.imp.MemberImpDAO;
+import in.chainsys.exception.DbException;
+import in.chainsys.exception.MemberExistException;
+import in.chainsys.exception.ServiceException;
 import in.chainsys.model.MemberTable;
 import in.chainsys.util.MessageConstant;
 import in.chainsys.validator.MemberValidator;
@@ -18,12 +21,14 @@ public class MemberService {
 	 * @param mobileNumber
 	 * @param memberJoiningDate
 	 * @param status
+	 * @throws MemberExistException
+	 * @throws ServiceException
 	 * @throws in.chainsys.exception.ValidationException
 	 * @throws Exception
 	 */
 
 	public static boolean addMember(int memberId, String memberName, long mobileNumber, LocalDate memberJoiningDate,
-			String status) throws Exception {
+			String status) throws DbException, ServiceException, MemberExistException {
 		boolean added = false;
 		int id = memberId;
 		String name = memberName;
@@ -38,7 +43,7 @@ public class MemberService {
 			added = true;
 
 		} else {
-			throw new Exception(MessageConstant.INVALIDMEMBERNAME);
+			throw new DbException(MessageConstant.INVALIDMEMBERNAME);
 		}
 		return added;
 	}
@@ -48,7 +53,7 @@ public class MemberService {
 	 * 
 	 * @param memberId
 	 */
-	public static boolean deleteMember(int memberId) throws Exception {
+	public static boolean deleteMember(int memberId) throws DbException {
 		int id = memberId;
 		MemberImpDAO.deleteMember(id);
 		return true;
@@ -62,7 +67,7 @@ public class MemberService {
 	 * @return
 	 * @throws Exception
 	 */
-	public static boolean updateMemberStatus(int memberId, String status) throws Exception {
+	public static boolean updateMemberStatus(int memberId, String status) throws DbException {
 		int id = memberId;
 		String status1 = status;
 		MemberImpDAO.updateMemberStatus(status1, id);

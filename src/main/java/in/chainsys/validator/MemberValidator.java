@@ -16,7 +16,6 @@ public class MemberValidator {
 
 	public static boolean isMemberExists(String name) throws MemberExistException {
 		boolean isExist = false;
-		System.out.println(name);
 		List<MemberTable> memberList = MemberImpDAO.getAllMembers();
 		for (MemberTable member : memberList) {
 			if (name.equals(member.getMemberName())) {

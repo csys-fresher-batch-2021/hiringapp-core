@@ -13,7 +13,7 @@ public class MemberUpdateTest {
 		 */
 
 		int memberId = 1002;
-		String status = "INACTIVE";
+		String status = "ACTIVE";
 		boolean isMemberUpdated = MemberService.updateMemberStatus(memberId, status);
 		System.out.println(isMemberUpdated);
 		List<MemberTable> obj = MemberImpDAO.getAllMembers();

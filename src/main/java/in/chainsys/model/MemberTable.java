@@ -31,39 +31,10 @@ public class MemberTable {
 		return status;
 	}
 
-	public Date getDate() {
-		return date;
-	}
-
-	public void setDate(Date date) {
-		this.date = date;
-	}
-
-	public void setMemberIdNumber(int memberIdNumber) {
-		this.memberIdNumber = memberIdNumber;
-	}
-
-	public void setMemberName(String memberName) {
-		this.memberName = memberName;
-	}
-
-	public void setMobileNumber(long mobileNumber) {
-		this.mobileNumber = mobileNumber;
-	}
-
-	public void setMemberJoiningDate(LocalDate memberJoiningDate) {
-		this.memberJoiningDate = memberJoiningDate;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
-	}
-
 	@Override
 	public String toString() {
 		return "MemberTable [memberIdNumber=" + memberIdNumber + ", memberName=" + memberName + ", mobileNumber="
-				+ mobileNumber + ", memberJoiningDate=" + memberJoiningDate + ", status=" + status + ", Date=" + date
-				+ "]";
+				+ mobileNumber + ", status=" + status + ", memberJoiningDate=" + date + "]";
 	}
 
 	public MemberTable(int memberIdNumber, String memberName, long mobileNumber, LocalDate date, String status) {

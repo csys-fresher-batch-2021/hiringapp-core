@@ -14,8 +14,8 @@ public class MemberAddingTest {
 
 	public static void main(String[] args) throws Throwable {
 		LocalDate dob = LocalDate.now();
-		int memberId = 1007;
-		String memberName = "SIVARAM";
+		int memberId = 1008;
+		String memberName = "Madavan";
 		long mobileNo = 9996663331L;
 		LocalDate date = dob;
 		String Status = "ACTIVE";

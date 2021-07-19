@@ -4,7 +4,11 @@ import java.sql.SQLException;
 import java.util.List;
 
 import in.chainsys.dao.BookDAO;
+<<<<<<< HEAD
 import in.chainsys.excepiton.ExistingBookException;
+=======
+import in.chainsys.exception.ExistingBookException;
+>>>>>>> 2c06aae1f9aef74f181c166bc077f5d0616e0b52
 import in.chainsys.model.Book;
 
 public class BookServiceValidation {

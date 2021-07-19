@@ -6,7 +6,11 @@ import java.sql.SQLException;
 
 import org.junit.Test;
 
+<<<<<<< HEAD
 import in.chainsys.excepiton.InvalidCredentialsExcepions;
+=======
+import in.chainsys.exception.InvalidCredentialsExcepions;
+>>>>>>> 2c06aae1f9aef74f181c166bc077f5d0616e0b52
 import in.chainsys.service.LoginService;
 
 public class LoginTest {

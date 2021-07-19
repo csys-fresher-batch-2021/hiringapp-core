@@ -6,7 +6,11 @@ import java.sql.SQLException;
 
 import org.junit.Test;
 
+<<<<<<< HEAD
 import in.chainsys.excepiton.ExistingBookException;
+=======
+import in.chainsys.exception.ExistingBookException;
+>>>>>>> 2c06aae1f9aef74f181c166bc077f5d0616e0b52
 import in.chainsys.service.AddBookService;
 
 public class AddBookTest {
@@ -22,8 +26,12 @@ public class AddBookTest {
 		String bookBayNumber="D2";
 		String bookShelfNumber="3D";
 		boolean isBookAdded = AddBookService.addBooks(name,author,bookPublications,yearOfPublicaion,numberOfCopies,availablity,bookBayNumber,bookShelfNumber);
+<<<<<<< HEAD
 		assertTrue(isBookAdded);
 		
+=======
+		assertTrue(isBookAdded);	
+>>>>>>> 2c06aae1f9aef74f181c166bc077f5d0616e0b52
 	}
 
 }

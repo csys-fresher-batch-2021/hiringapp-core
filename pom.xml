@@ -9,8 +9,8 @@
 	<properties>
 		<maven.compiler.target>1.8</maven.compiler.target>
 		<maven.compiler.source>1.8</maven.compiler.source>
-		<sonar.projectKey>csys-fresher-batch-2021_yourprojectname</sonar.projectKey>
-		<sonar.organization>csys-fresher-batch-2021</sonar.organization>
+		<sonar.projectKey>librarymangementsytem-core</sonar.projectKey>
+		<sonar.organization>csys-fresher-batch-2021-fusion</sonar.organization>
 		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
 	</properties>
 
@@ -21,7 +21,7 @@
 			<version>4.13.2</version>
 			<scope>test</scope>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>com.oracle.database.jdbc</groupId>
 			<artifactId>ojdbc8</artifactId>

@@ -16,7 +16,11 @@ public class MemberDAO {
 
 	private static final String ADDD_MEMBER = "INSERT INTO memeberTable(member_id,memberName,memberNumber,memberJoiningDate,memberStatus)values(?,?,?,?,?)";
 	private static final String DISPLAY_MEMBER = "SELECT * FROM memeberTable";
+<<<<<<< HEAD
 
+=======
+	private static final String DSIPLAY_INDIVIDUAL_MEMBER_QUERY ="SELECT * FROM memeberTable where memberNumber=?";
+>>>>>>> 2c06aae1f9aef74f181c166bc077f5d0616e0b52
 	/**
 	 * This Method is to Add Member.
 	 * 
@@ -104,4 +108,39 @@ public class MemberDAO {
 		}
 		return count;
 	}
+<<<<<<< HEAD
+=======
+	/**
+	 * This Method is Used to get the Details of the individual member
+	 * @param number
+	 * @return
+	 */
+	public List<Member> getIndividualMember(long number){
+		List<Member> individualMember = new ArrayList<>();
+		Connection connection = null;
+		PreparedStatement pst = null;
+		ResultSet rs = null;
+		try {
+			connection =ConnectionUtil.getConnection();
+			String sql =DSIPLAY_INDIVIDUAL_MEMBER_QUERY;
+			pst=connection.prepareStatement(sql);
+			pst.setLong(1, number);
+			rs=pst.executeQuery();
+			while(rs.next()) {
+				int id = rs.getInt("member_id");
+				String name = rs.getString("memberName");
+				long membernumber = rs.getLong("memberNumber");
+				Date sqlDate = rs.getDate("memberJoiningDate");
+				LocalDate date = sqlDate.toLocalDate();
+				String status = rs.getString("memberStatus");
+				Member member = new Member(id, name, membernumber, date, status);
+				individualMember.add(member);
+			}}catch (ClassNotFoundException| SQLException e) {
+				e.getMessage();
+			}finally {
+				ConnectionUtil.close(rs, pst, connection);
+		}
+		return individualMember;
+	}
+>>>>>>> 2c06aae1f9aef74f181c166bc077f5d0616e0b52
 }

@@ -4,7 +4,10 @@ import java.sql.SQLException;
 import java.util.List;
 
 import in.chainsys.dao.MemberDAO;
+<<<<<<< HEAD
 import in.chainsys.excepiton.MemberExistException;
+=======
+>>>>>>> 2c06aae1f9aef74f181c166bc077f5d0616e0b52
 import in.chainsys.model.Member;
 
 public class MemberServicesValidator {
@@ -28,7 +31,10 @@ public class MemberServicesValidator {
 		List<Member> memberList = memberDAO.displayallMember();
 		for (Member member : memberList) {
 			long memberNumber = member.getMemberNumber();
+<<<<<<< HEAD
 			System.out.println(memberNumber);
+=======
+>>>>>>> 2c06aae1f9aef74f181c166bc077f5d0616e0b52
 			if (memberNumber == number ) {
 				isExist=false;
 			}else {

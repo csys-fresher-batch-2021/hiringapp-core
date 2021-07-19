@@ -72,4 +72,8 @@ public class ConnectionUtil {
 			e.printStackTrace();
 		}
 	}
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 2c06aae1f9aef74f181c166bc077f5d0616e0b52

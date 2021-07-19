@@ -1,6 +1,9 @@
 package in.chainsys.model;
 
+<<<<<<< HEAD
 import java.sql.Date;
+=======
+>>>>>>> 2c06aae1f9aef74f181c166bc077f5d0616e0b52
 import java.time.LocalDate;
 
 public class Transaction {
@@ -10,7 +13,11 @@ public class Transaction {
 	private String bookName;
 	private LocalDate bookTakenDate;
 	private LocalDate bookDueDate;
+<<<<<<< HEAD
 	private LocalDate bookreturnDate;
+=======
+	private String bookreturnDate;
+>>>>>>> 2c06aae1f9aef74f181c166bc077f5d0616e0b52
 	private String bookStatus;
 	public int getTranscationId() {
 		return transcationId;
@@ -48,10 +55,17 @@ public class Transaction {
 	public void setBookDueDate(LocalDate bookDueDate) {
 		this.bookDueDate = bookDueDate;
 	}
+<<<<<<< HEAD
 	public LocalDate getBookreturnDate() {
 		return bookreturnDate;
 	}
 	public void setBookreturnDate(LocalDate bookreturnDate) {
+=======
+	public String getBookreturnDate() {
+		return bookreturnDate;
+	}
+	public void setBookreturnDate(String bookreturnDate) {
+>>>>>>> 2c06aae1f9aef74f181c166bc077f5d0616e0b52
 		this.bookreturnDate = bookreturnDate;
 	}
 	public String getBookStatus() {
@@ -61,7 +75,11 @@ public class Transaction {
 		this.bookStatus = bookStatus;
 	}
 	public Transaction(int transcationId, int memberId, int bookId, String bookName, LocalDate bookTakenDate,
+<<<<<<< HEAD
 			LocalDate bookDueDate, LocalDate bookReturnedDate, String bookStatus) {
+=======
+			LocalDate bookDueDate, String bookReturnedDate, String bookStatus) {
+>>>>>>> 2c06aae1f9aef74f181c166bc077f5d0616e0b52
 		super();
 		this.transcationId = transcationId;
 		this.memberId = memberId;

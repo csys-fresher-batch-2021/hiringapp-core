@@ -14,7 +14,7 @@ public class AddMemberTest {
 
 	@Test
 	public void addMemberTest() throws ClassNotFoundException, FeildShouldNotBeEmptyExceptions, SQLException, MemberExistException {
-		long number =8080808080l;
+		long number =9080808080l;
 		String name = "Sam Paul";
 		boolean isMemberTest = MembeService.addMember(name ,number);
 		assertTrue(isMemberTest);

@@ -38,7 +38,9 @@ public class MembeService {
 		int id = 0;
 		MemberDAO memberDAO = new MemberDAO();
 		int tableSize = memberDAO.tableSize() + 1;
+		System.out.println(tableSize);
 		id = tableSize + 3000;
+		System.out.println(id);
 		return id;
 	}
 

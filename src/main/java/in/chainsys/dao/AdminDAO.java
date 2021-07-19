@@ -38,7 +38,6 @@ public class AdminDAO {
 		} finally {
 			ConnectionUtil.close(rs, pst, connection);
 		}
-		System.out.println(adminList);
 		return adminList;
 	}
 }

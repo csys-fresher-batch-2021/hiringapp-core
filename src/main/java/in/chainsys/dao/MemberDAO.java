@@ -14,8 +14,8 @@ import in.chainsys.util.ConnectionUtil;
 
 public class MemberDAO {
 
-	private static final String ADDD_MEMBER = "INSERT INTO memberTable(member_id,memberName,memberNumber,memberJoiningDate,memberStatus)values(?,?,?,?,?)";
-	private static final String DISPLAY_MEMBER = "SELECT * FROM memberTable";
+	private static final String ADDD_MEMBER = "INSERT INTO memeberTable(member_id,memberName,memberNumber,memberJoiningDate,memberStatus)values(?,?,?,?,?)";
+	private static final String DISPLAY_MEMBER = "SELECT * FROM memeberTable";
 
 	/**
 	 * This Method is to Add Member.
@@ -92,7 +92,7 @@ public class MemberDAO {
 		ResultSet rs = null;
 		try {
 			connection = ConnectionUtil.getConnection();
-			String sql = "select count(*) from memberTable";
+			String sql = "select count(*) from memeberTable";
 			pst = connection.prepareStatement(sql);
 			rs=pst.executeQuery();
 			rs.next();

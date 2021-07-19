@@ -16,15 +16,13 @@ public class AddBookTest {
 		String name = "Mobile Computing";
 		String author = "Vinay Kumar";
 		String bookPublications = "K Nath";
-		String yearOfPublicaion = "1987";
-		int numberOfCopies = 20;
+		String yearOfPublicaion ="1987";
+		int numberOfCopies= 20;
 		String availablity = "YES";
-		String bookBayNumber = "D2";
-		String bookShelfNumber = "3D";
-		boolean isBookAdded = AddBookService.addBooks(name, author, bookPublications, yearOfPublicaion, numberOfCopies,
-				availablity, bookBayNumber, bookShelfNumber);
-		assertTrue(isBookAdded);
-
+		String bookBayNumber="D2";
+		String bookShelfNumber="3D";
+		boolean isBookAdded = AddBookService.addBooks(name,author,bookPublications,yearOfPublicaion,numberOfCopies,availablity,bookBayNumber,bookShelfNumber);
+		assertTrue(isBookAdded);	
 	}
 
 }

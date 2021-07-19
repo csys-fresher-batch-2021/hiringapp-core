@@ -9,32 +9,52 @@ public class MemberTable {
 	private long mobileNumber;
 	private LocalDate memberJoiningDate;
 	private String status;
-	private Date date;
+	private Date Date2;
 
 	public int getMemberIdNumber() {
 		return memberIdNumber;
+	}
+
+	public void setMemberIdNumber(int memberIdNumber) {
+		this.memberIdNumber = memberIdNumber;
 	}
 
 	public String getMemberName() {
 		return memberName;
 	}
 
+	public void setMemberName(String memberName) {
+		this.memberName = memberName;
+	}
+
 	public long getMobileNumber() {
 		return mobileNumber;
+	}
+
+	public void setMobileNumber(long mobileNumber) {
+		this.mobileNumber = mobileNumber;
 	}
 
 	public LocalDate getMemberJoiningDate() {
 		return memberJoiningDate;
 	}
 
+	public void setMemberJoiningDate(LocalDate memberJoiningDate) {
+		this.memberJoiningDate = memberJoiningDate;
+	}
+
 	public String getStatus() {
 		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
 	}
 
 	@Override
 	public String toString() {
 		return "MemberTable [memberIdNumber=" + memberIdNumber + ", memberName=" + memberName + ", mobileNumber="
-				+ mobileNumber + ", status=" + status + ", memberJoiningDate=" + date + "]";
+				+ mobileNumber + ", memberJoiningDate=" + memberJoiningDate + ", status=" + status + "]";
 	}
 
 	public MemberTable(int memberIdNumber, String memberName, long mobileNumber, LocalDate date, String status) {
@@ -50,7 +70,7 @@ public class MemberTable {
 		super();
 		this.memberName = memberName2;
 		this.mobileNumber = mobileNumber2;
-		this.date = date2;
+		this.Date2 = date2;
 		this.status = status2;
 	}
 
@@ -66,7 +86,7 @@ public class MemberTable {
 		this.memberIdNumber = memberId;
 		this.memberName = memberName2;
 		this.mobileNumber = mobileNumber2;
-		this.date = date;
+		this.Date2 = date;
 		this.status = status2;
 	}
 

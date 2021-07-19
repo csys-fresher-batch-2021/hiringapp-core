@@ -15,6 +15,8 @@ public class BookDAO {
 	private static final String INSERT_ADD_BOOK_QUERY = "INSERT INTO BOOK_TABLE (Book_Id,Book_Name,Book_Serial_Number,Author,Book_Publications,Year_Of_Publication,no_of_copies,book_availablity_status,book_bay_number,book_shelf_number) values(?,?,?,?,?,?,?,?,?,?)";
 	private static final String DISPLAY_ALL_BOOK_QUERY = "SELECT * FROM BOOK_TABLE";
 	private static final String DISPLAY_INDIVIDUAL_BOOK_QUERY = "SELECT * FROM book_table where book_name=?";
+	private static final String UPDATE_BOOK_QUERY = "UPDATE BOOK_TABLE SET no_of_copies=? WHERE Book_Id =?";
+
 
 	/**
 	 * This Method is to Add book.
@@ -142,4 +144,47 @@ public class BookDAO {
 		}
 		return displayIndividualBook;
 	}
+
+	public int getCopies(int id) throws ClassNotFoundException, SQLException {
+		Connection connection = null;
+		PreparedStatement pst = null;
+		ResultSet rs = null;
+		int copies =0;
+		try {
+			connection = ConnectionUtil.getConnection();
+			String sql = "SELECT no_of_copies FROM book_table WHERE Book_Id=?";
+			pst = connection.prepareStatement(sql);
+			pst.setInt(1,id);
+			rs = pst.executeQuery();
+			rs.next();
+			 copies = rs.getInt("no_of_copies");
+		} catch (ClassNotFoundException | SQLException e) {
+			e.getMessage();
+		} finally {
+			ConnectionUtil.close(rs, pst, connection);
+		}
+		return copies;
+	}
+	/**
+	 * This method is used to update the copies of book when book is taken 
+	 * @param copies
+	 * @param bookId
+	 */
+	public void updateBookTable(int copies, int bookId) {
+		Connection connection = null;
+		PreparedStatement pst = null;
+		try {
+			connection = ConnectionUtil.getConnection();
+			String sql = UPDATE_BOOK_QUERY;
+			pst = connection.prepareStatement(sql);
+			pst.setInt(1, copies);
+			pst.setInt(2, bookId);
+			pst.executeUpdate();
+		} catch (ClassNotFoundException | SQLException e) {
+			e.getMessage();
+		} finally {
+			ConnectionUtil.close(pst, connection);
+		}
+	}
+	
 }

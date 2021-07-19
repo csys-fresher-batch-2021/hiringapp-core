@@ -7,7 +7,7 @@ import in.chainsys.model.MemberTable;
 import in.chainsys.util.MessageConstant;
 import in.chainsys.validator.MemberValidator;
 
-public class MemberService {
+public class Member {
 
 	/**
 	 * This method is used to add the new member.It validates the name then add it

@@ -59,20 +59,5 @@ public class MemberService {
 		return true;
 	}
 
-	/**
-	 * This method is used to update the status
-	 * 
-	 * @param memberId
-	 * @param status
-	 * @return
-	 * @throws Exception
-	 */
-	public static boolean updateMemberStatus(int memberId, String status) throws DbException {
-		int id = memberId;
-		String status1 = status;
-		MemberImpDAO.updateMemberStatus(status1, id);
-		return true;
-
-	}
-
+	
 }

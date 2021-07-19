@@ -7,7 +7,9 @@ import in.chainsys.model.Book;
 import in.chainsys.validator.BookServiceValidation;
 
 public class AddBookService {
-	
+	private AddBookService() {
+		//default Constructor
+	}
 	private static BookDAO bookDAO = new BookDAO();
 	
 	public static boolean addBooks( String bookName,String author, String bookPublication,String yearOfPublication,int numberOfCopies,String bookAvailablityStatus,String bookBayNumber,String bookShelfNumber ) throws SQLException, ClassNotFoundException, ExistingBookException{

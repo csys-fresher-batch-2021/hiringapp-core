@@ -13,14 +13,14 @@ public class AddBookTest {
 
 	@Test
 	public void addBookTest() throws ClassNotFoundException, SQLException, ExistingBookException {
-		String name = "Mobile Computing";
-		String author = "Vinay Kumar";
-		String bookPublications = "K Nath";
-		String yearOfPublicaion ="1987";
+		String name = "Computer Networks";
+		String author = "Sharad Kumar";
+		String bookPublications = "Sun India";
+		String yearOfPublicaion ="2010";
 		int numberOfCopies= 20;
 		String availablity = "YES";
-		String bookBayNumber="D2";
-		String bookShelfNumber="3D";
+		String bookBayNumber="E3";
+		String bookShelfNumber="1E";
 		boolean isBookAdded = AddBookService.addBooks(name,author,bookPublications,yearOfPublicaion,numberOfCopies,availablity,bookBayNumber,bookShelfNumber);
 		assertTrue(isBookAdded);	
 	}
